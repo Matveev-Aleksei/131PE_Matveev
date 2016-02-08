@@ -11,43 +11,41 @@ namespace _131PE_Matveev
         static void Main(string[] args)
         {
             // Задание 1. Приложение для расчета ЗП.
-            double i;
-            double z;
+           
+            int i;
+            int z;
             z = 0;
-
             Console.WriteLine("Введите размер дневной выручки ");
-            i = Convert.ToDouble(Console.ReadLine());
+            i = Convert.ToInt32(Console.ReadLine());
 
             if (i <= 1000)
-            {
-                z = i / 100 * 5;
-                Console.WriteLine("Размер выручки равен ");
-                Console.Write(z);
-                
-            }
+                {
+                    z = i / 100 * 5;
+                    Console.WriteLine("Размер выручки равен ");
+                    Console.Write(z); 
+                }
 
             if (i > 10000)
-            {
+                {
                 
-                z = i / 100 * 10 + 500;
-                Console.WriteLine("Размер выручки равен ");
-                Console.Write(z);
+                    z = i / 100 * 10 + 500;
+                    Console.WriteLine("Размер выручки равен ");
+                    Console.Write(z);
+                }
 
-            }
 
-            // Задание 2. Введение понятия - минимальная ЗП. 
+             // Задание 2. Введение понятия - минимальная ЗП. 
+
             if (z < 300)
-            {
-                Console.Clear();
-                Console.WriteLine("Внимание! Минимальный размер оплаты труда за день = 300р");
-                z = 300;
-                Console.WriteLine("Размер выручки равен ");
-                Console.Write(z);
-            }
+                {
+                    Console.WriteLine("Внимание! Минимальный размер оплаты труда за день = 300р");
+                    z = 300;
+                    Console.WriteLine("Размер выручки равен ");
+                    Console.Write(z);
+                }
 
            
 
-          
             Console.ReadKey();
         }
     }
