@@ -12,16 +12,16 @@ namespace _131PE_Matveev
         {
             // Задание 1. Приложение для расчета ЗП.
            
-            int i;
-            int d;
-            int z;
+            int revenue;
+            int days;
+            int wage;
             int c = 0;
             int a = 0;
 
             Console.WriteLine("Введите колличество дней: ");
-            d = Convert.ToInt32(Console.ReadLine());
+            days = Convert.ToInt32(Console.ReadLine());
 
-            if (d > 5)
+            if (days > 5)
             {
                 Console.WriteLine("Напоминание! Работа в выходные дни оплачивается по двойному тарифу");
             }
@@ -29,23 +29,31 @@ namespace _131PE_Matveev
                 do
                 {
                     Console.WriteLine("Введите размер дневной выручки: ");
-                    i = Convert.ToInt32(Console.ReadLine());
+                    revenue = Convert.ToInt32(Console.ReadLine());
 
-                    if (i <= 10000)
+                    if (revenue <= 10000)
                         {
-                            z = i * 5 / 100;
-                            Console.WriteLine("Размер заработной платы равен: " + z);
+                            wage = revenue * 5 / 100;
+                            Console.WriteLine("Размер заработной платы равен: " + wage);
                         }
 
                     else
                         {
-                            z = i * 10 / 100 + 500;
-                            Console.WriteLine("Размер заработной платы равен: " + z);
+                            if (revenue == 50000)
+                            {
+                                wage = 4500;
+                                Console.WriteLine("Размер заработной платы равен: " + wage);
+                            }
+                            else
+                            {
+                                wage = (revenue - 10000) * 10 / 100 + 500;
+                                Console.WriteLine("Размер заработной платы равен: " + wage);
+                            }
                         }
 
-                    if (z < 300)
+                    if (wage < 300)
                         {
-                            z = 300;
+                            wage = 300;
                             Console.WriteLine("Минимальный размер оплаты труда за 1 день равен 300р. ");
                         }
 
@@ -54,18 +62,18 @@ namespace _131PE_Matveev
 
                     if (a > 5)
                         {
-                            z = z * 2;
-                            Console.WriteLine("Внимание! Двойной тариф. Заработная плата за этот день равна: " + z);
+                            wage = wage * 2;
+                            Console.WriteLine("Внимание! Двойной тариф. Заработная плата за этот день равна: " + wage);
                         }
 
-                    c = c + z;
+                    c = c + wage;
 
-                    if (a == d)
+                    if (a == days)
                         {
                             Console.WriteLine("Заработная плата составляет: " + c);
                         }
                 }
-                while (a < d);
+                 while (a < days);
             
            
 
