@@ -8,13 +8,10 @@ namespace _131PE_Matveev
 {
     class Program
     {
-        static void TotalDay(int result, bool isOverride)
+        static int TotalDay(int result, bool isOverride)
         {
-            // Задание. Приложение для расчета ЗП.
-
             int totalMin = 300;
             int total;
-
             if (result == 10000)
             {
                 total = 500;
@@ -23,7 +20,7 @@ namespace _131PE_Matveev
             {
                 total = ((result - 10000) / 100) * 10 + 500;
             }
-            if (result > 100000)
+            else if (result > 100000)
             {
                 total = result / 100 * 15;
             }
@@ -31,81 +28,62 @@ namespace _131PE_Matveev
             {
                 total = totalMin;
             }
-
             return isOverride ? 2 * total : total;
         }
 
-        static int [] 
+        static int[] GetDaysFromConsole()
+        {
+            Console.Write("Введете отработанные дни: ");
+            int weekSize = Convert.ToInt32(Console.ReadLine());
+            int[] days = new int[weekSize];
 
-         
-            
+            for (int i = 0; i < weekSize; i++)
+            {
+                Console.Write("Введете размер дневной выручки: ");
+                days[i] = Convert.ToInt32(Console.ReadLine());
+            }
 
-                 //int revenue;
-                 //int days;
-                 //int wage;
-                 //int c = 0;
-                 //int a = 0;
+            return days;
+        }
 
-                 //Console.WriteLine("Введите колличество дней: ");
-                 //days = Convert.ToInt32(Console.ReadLine());
+        static void Main(string[] args)
+        {
+            int total = 0;
+            int[] days = null;
+            ConsoleKeyInfo mode;
 
-                 //if (days > 5)
-                 //{
-                 //    Console.WriteLine("Напоминание! Работа в выходные дни оплачивается по двойному тарифу");
-                 //}
+            while (days == null)
+            {
+                Console.WriteLine("2 - ручной ввод ");
 
-                 //    do
-                 //    {
-                 //        Console.WriteLine("Введите размер дневной выручки: ");
-                 //        revenue = Convert.ToInt32(Console.ReadLine());
+                mode = Console.ReadKey(true);
 
-                 //        if (revenue <= 10000)
-                 //            {
-                 //                wage = revenue * 5 / 100;
-                 //                Console.WriteLine("Размер заработной платы равен: " + wage);
-                 //            }
+                switch (mode.Key)
+                {
+                    case ConsoleKey.D1:
 
-                 //        else
-                 //            {
-                 //                if (revenue == 50000)
-                 //                {
-                 //                    wage = 4500;
-                 //                    Console.WriteLine("Размер заработной платы равен: " + wage);
-                 //                }
-                 //                else
-                 //                {
-                 //                    wage = (revenue - 10000) * 10 / 100 + 500;
-                 //                    Console.WriteLine("Размер заработной платы равен: " + wage);
-                 //                }
-                 //            }
+                        //days = 
 
-                 //        if (wage < 300)
-                 //            {
-                 //                wage = 300;
-                 //                Console.WriteLine("Минимальный размер оплаты труда за 1 день равен 300р. ");
-                 //            }
+                        break;
+                    case ConsoleKey.D2:
 
-                 //        a++;
+                        days = GetDaysFromConsole();
+
+                        break;
+                }
+
+            }
 
 
-                 //        if (a > 5)
-                 //            {
-                 //                wage = wage * 2;
-                 //                Console.WriteLine("Внимание! Двойной тариф. Заработная плата за этот день равна: " + wage);
-                 //            }
-
-                 //        c = c + wage;
-
-                 //        if (a == days)
-                 //            {
-                 //                Console.WriteLine("Заработная плата составляет: " + c);
-                 //            }
-                 //    }
-                 //     while (a < days);
-
-
-
-                 Console.ReadKey();
+            for (int i = 1; i < days.Length; i++)
+            {
+                int dayPay = TotalDay(days[i], i > 4);
+                total += dayPay;
+                Console.WriteLine("День {0}: {1} руб.", i, dayPay);
+            }
+            Console.WriteLine("Выручка за неделю: {0} руб.", total);
+            Console.ReadKey();
         }
     }
+
 }
