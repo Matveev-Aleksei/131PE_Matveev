@@ -68,7 +68,7 @@ namespace _131PE_Matveev
                         string line;
 
                         System.IO.StreamReader file =
-                            new System.IO.StreamReader(@"d:\tekst.txt");
+                            new System.IO.StreamReader(@"c:\users\aamatveev\documents\visual studio 2015\Projects\tekst.txt");
                         while ((line = file.ReadLine()) != null)
                         {
                             System.Console.WriteLine(line);
