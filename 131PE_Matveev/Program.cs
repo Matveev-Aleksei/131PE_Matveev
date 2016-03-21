@@ -33,7 +33,7 @@ namespace _131PE_Matveev
 
         static int[] GetDaysFromConsole()
         {
-            Console.Write("Введете отработанные дни: ");
+            Console.Write("Введете колличество отработанных дней: ");
             int weekSize = Convert.ToInt32(Console.ReadLine());
             int[] days = new int[weekSize];
 
@@ -54,18 +54,19 @@ namespace _131PE_Matveev
 
             while (days == null)
             {
-                Console.WriteLine("2 - ручной ввод ");
+                Console.WriteLine("1 - Ввод с клавиатуры " + " 2 - Чтение из файла ");
 
                 mode = Console.ReadKey(true);
 
                 switch (mode.Key)
                 {
-                    case ConsoleKey.D1:
-
-                        //days = 
+                    case ConsoleKey.D2:
+                        Console.WriteLine("Данная функция находится в доработке!");
+                        Console.ReadKey();
+                        return;
 
                         break;
-                    case ConsoleKey.D2:
+                    case ConsoleKey.D1:
 
                         days = GetDaysFromConsole();
 
@@ -75,13 +76,13 @@ namespace _131PE_Matveev
             }
 
 
-            for (int i = 1; i < days.Length; i++)
+            for (int i = 0; i < days.Length; i++)
             {
                 int dayPay = TotalDay(days[i], i > 4);
                 total += dayPay;
-                Console.WriteLine("День {0}: {1} руб.", i, dayPay);
+                Console.WriteLine("День {0}: {1} руб.",i+1, dayPay);
             }
-            Console.WriteLine("Выручка за неделю: {0} руб.", total);
+            Console.WriteLine("Размер выручки за неделю составляет: {0} руб.", total);
             Console.ReadKey();
         }
     }
