@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -31,6 +32,7 @@ namespace _131PE_Matveev
             return isOverride ? 2 * total : total;
         }
 
+
         static int[] GetDaysFromConsole()
         {
             Console.Write("Введете колличество отработанных дней: ");
@@ -61,9 +63,20 @@ namespace _131PE_Matveev
                 switch (mode.Key)
                 {
                     case ConsoleKey.D2:
-                        Console.WriteLine("Данная функция находится в доработке!");
+
+                        int counter = 0;
+                        string line;
+
+                        System.IO.StreamReader file =
+                            new System.IO.StreamReader(@"d:\tekst.txt");
+                        while ((line = file.ReadLine()) != null)
+                        {
+                            System.Console.WriteLine(line);
+                            counter++;
+                        }
+
                         Console.ReadKey();
-                        return;
+           
 
                         break;
                     case ConsoleKey.D1:
