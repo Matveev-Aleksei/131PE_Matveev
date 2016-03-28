@@ -5,6 +5,8 @@ VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "131PE_Matveev", "131PE_Matveev\131PE_Matveev.csproj", "{9CC2D557-E616-4D4C-8CFB-FD610097BECF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Чтение из файла", "Чтение из файла\Чтение из файла.csproj", "{BC0C6F36-1F01-4DF7-86AC-7794741A711C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{9CC2D557-E616-4D4C-8CFB-FD610097BECF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9CC2D557-E616-4D4C-8CFB-FD610097BECF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9CC2D557-E616-4D4C-8CFB-FD610097BECF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BC0C6F36-1F01-4DF7-86AC-7794741A711C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC0C6F36-1F01-4DF7-86AC-7794741A711C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC0C6F36-1F01-4DF7-86AC-7794741A711C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC0C6F36-1F01-4DF7-86AC-7794741A711C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
